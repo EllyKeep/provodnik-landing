@@ -6,9 +6,10 @@
 <title>Elena Gurianova — AI Automation & Chatbot Specialist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+em{font-style:normal}
 :root{
   --cream:#F8F3EC;
   --cream-mid:#EDE8DE;
@@ -33,7 +34,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);z-index:200;transition:background .3s,box-shadow .3s}
 nav.s{background:rgba(248,243,236,.96);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--cream-deep)}
-.logo{font-family:var(--fd);font-style:italic;font-size:1.45rem;font-weight:600;color:var(--espresso);text-decoration:none;letter-spacing:-.02em}
+.logo{font-family:var(--fd);font-size:1.45rem;font-weight:600;color:var(--espresso);text-decoration:none;letter-spacing:-.02em}
 .logo span{color:var(--terra)}
 .nav-r{display:flex;align-items:center;gap:28px}
 .ls{display:flex;gap:2px}
@@ -47,8 +48,8 @@ nav.s{background:rgba(248,243,236,.96);backdrop-filter:blur(14px);box-shadow:0 1
 .hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:var(--nav-h) var(--pad) 0;gap:40px}
 .h-eye{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:22px}
 .h-eye::before{content:'';width:22px;height:1px;background:var(--terra)}
-h1.h-name{font-family:var(--fd);font-style:italic;font-size:clamp(48px,7vw,100px);font-weight:300;line-height:1;letter-spacing:-.03em;margin-bottom:14px}
-h1.h-name em{font-style:normal;color:var(--terra)}
+h1.h-name{font-family:var(--fd);font-size:clamp(48px,7vw,100px);font-weight:300;line-height:1;letter-spacing:-.03em;margin-bottom:14px}
+h1.h-name em{color:var(--terra)}
 .h-sub{font-size:.9rem;color:var(--muted);margin-bottom:28px;letter-spacing:.01em}
 .h-tag{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:500;line-height:1.45;max-width:420px;margin-bottom:44px}
 .h-act{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
@@ -64,9 +65,9 @@ h1.h-name em{font-style:normal;color:var(--terra)}
 .medal-svg{position:absolute;inset:0}
 .medal-inner{position:absolute;inset:18%;border-radius:50%;background:var(--cream-mid);border:1.5px solid var(--cream-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}
 .m-big{font-family:var(--fd);font-size:clamp(38px,5.5vw,68px);font-weight:600;line-height:1}
-.m-lbl{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.m-lbl{font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .m-div{width:36px;height:1px;background:var(--cream-deep);margin:10px auto}
-.m-sub{font-size:.75rem;color:var(--muted)}
+.m-sub{font-size:.82rem;color:var(--muted)}
 @keyframes spin{to{transform:rotate(360deg)}}
 .badge{position:absolute;background:#fff;border:1px solid var(--cream-deep);border-radius:12px;padding:11px 15px;box-shadow:0 8px 28px rgba(26,18,8,.07);display:flex;align-items:center;gap:10px}
 .badge-1{top:12%;right:-6%}
@@ -80,7 +81,7 @@ h1.h-name em{font-style:normal;color:var(--terra)}
 .s-lbl{display:inline-flex;align-items:center;gap:10px;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
 .s-lbl::before{content:'';width:18px;height:1px;background:var(--muted)}
 .s-title{font-family:var(--fd);font-size:clamp(30px,4.5vw,58px);font-weight:400;letter-spacing:-.02em;line-height:1.08}
-.s-title em{font-style:italic;color:var(--terra)}
+.s-title em{color:var(--terra)}
 
 /* ── CASES ── */
 .cases-hd{margin-bottom:52px}
@@ -101,16 +102,17 @@ h1.h-name em{font-style:normal;color:var(--terra)}
 .cc:nth-child(10){grid-column:span 12;background:var(--espresso);display:grid;grid-template-columns:1fr auto;align-items:center;gap:32px}
 .cc:nth-child(10)::after{background:var(--bronze)}
 .cc:nth-child(10):hover{background:#241a0e}
-.cc:nth-child(10) .cnum,.cc:nth-child(10) .ctit{color:#fff}
+.cc:nth-child(10) .ctit{color:#fff}
 .cc:nth-child(10) .cpain{color:rgba(255,255,255,.55)}
+.cc:nth-child(10) .csol{color:rgba(255,255,255,.75);border-top-color:rgba(255,255,255,.12)}
 .cc:nth-child(10) .ctag{background:rgba(255,255,255,.1);color:var(--bronze)}
-.cnum{font-family:var(--fd);font-size:.76rem;font-weight:600;color:var(--muted);letter-spacing:.06em;margin-bottom:14px}
 .cion{font-size:1.7rem;margin-bottom:10px}
-.ctit{font-family:var(--fd);font-size:clamp(15px,1.7vw,21px);font-weight:500;line-height:1.25;margin-bottom:7px}
-.cpain{font-size:.8rem;color:var(--muted);line-height:1.5}
-.ctag{display:inline-block;margin-top:13px;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);background:rgba(196,67,26,.1);padding:3px 10px;border-radius:100px}
+.ctit{font-family:var(--fd);font-size:clamp(16px,1.8vw,22px);font-weight:500;line-height:1.25;margin-bottom:8px}
+.cpain{font-size:.88rem;color:var(--muted);line-height:1.55}
+.csol{font-size:.85rem;color:var(--espresso);line-height:1.55;margin-top:10px;padding-top:10px;border-top:1px solid var(--cream-deep)}
+.ctag{display:inline-block;margin-top:14px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);background:rgba(196,67,26,.1);padding:4px 12px;border-radius:100px}
 .vip-cta{display:inline-flex;align-items:center;gap:8px;background:var(--bronze);color:#fff;text-decoration:none;font-size:.84rem;font-weight:600;padding:12px 22px;border-radius:100px;white-space:nowrap;flex-shrink:0}
-.vip-tech{font-size:.78rem;color:rgba(255,255,255,.45);margin-bottom:10px;text-align:right}
+.vip-tech{font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:10px;text-align:right}
 
 /* ── TOOLS ── */
 .tools{background:var(--cream-mid);border-top:1px solid var(--cream-deep);border-bottom:1px solid var(--cream-deep);padding:44px var(--pad)}
@@ -121,7 +123,7 @@ h1.h-name em{font-style:normal;color:var(--terra)}
 
 /* ── ABOUT ── */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);align-items:start}
-.a-quote{font-family:var(--fd);font-style:italic;font-size:clamp(20px,2.5vw,32px);font-weight:400;line-height:1.45;border-left:3px solid var(--terra);padding-left:22px;margin:28px 0}
+.a-quote{font-family:var(--fd);font-size:clamp(20px,2.5vw,32px);font-weight:400;line-height:1.45;border-left:3px solid var(--terra);padding-left:22px;margin:28px 0}
 .a-txt{font-size:.92rem;line-height:1.8;color:var(--muted);margin-bottom:14px}
 .a-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;padding-top:36px;border-top:1px solid var(--cream-deep)}
 .sn{font-family:var(--fd);font-size:clamp(30px,4vw,46px);font-weight:500;line-height:1}
@@ -129,7 +131,7 @@ h1.h-name em{font-style:normal;color:var(--terra)}
 .why-list{list-style:none;margin-top:44px}
 .wi{display:flex;gap:16px;padding:22px 0;border-bottom:1px solid var(--cream-deep)}
 .wi:first-child{padding-top:0}
-.wn{font-family:var(--fd);font-style:italic;font-size:1.3rem;color:var(--terra);min-width:28px;line-height:1;margin-top:2px}
+.wn{font-family:var(--fd);font-size:1.3rem;color:var(--terra);min-width:28px;line-height:1;margin-top:2px}
 .wc strong{display:block;font-size:.92rem;font-weight:600;margin-bottom:3px}
 .wc p{font-size:.82rem;color:var(--muted);line-height:1.6}
 
@@ -143,8 +145,8 @@ h1.h-name em{font-style:normal;color:var(--terra)}
 .ci{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px;text-decoration:none;color:#fff;transition:background .2s,transform .2s;display:block}
 .ci:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
 .ci-ico{font-size:1.5rem;margin-bottom:10px}
-.ci-pl{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:3px}
-.ci-val{font-size:.86rem;font-weight:500}
+.ci-pl{font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:3px}
+.ci-val{font-size:.88rem;font-weight:500}
 .ci.dim{opacity:.45;pointer-events:none}
 
 /* ── FORM ── */
@@ -248,73 +250,93 @@ footer{background:var(--espresso);color:rgba(255,255,255,.35);padding:22px var(-
     <h2 class="s-title" data-k="ctit">10 ниш. <em>Один специалист.</em></h2>
   </div>
   <div class="cgrid">
+
     <div class="cc rv" style="transition-delay:.05s">
-      <div class="cnum">01</div><div class="cion">🏥</div>
+      <div class="cion">🏥</div>
       <div class="ctit" data-k="c1t">Медицинская конференция</div>
-      <div class="cpain" data-k="c1p">Ручная регистрация, хаос с расписанием</div>
+      <div class="cpain" data-k="c1p">Ручная регистрация, хаос с расписанием — участники задают одни и те же вопросы по несколько раз</div>
+      <div class="csol" data-k="c1s">Бот ведёт регистрацию, выдаёт электронные билеты и отвечает на вопросы по программе. Работает 24/7 на 3 языках.</div>
       <div class="ctag" data-k="bot">Бот-ассистент</div>
     </div>
+
     <div class="cc rv" style="transition-delay:.1s">
-      <div class="cnum">02</div><div class="cion">🍽️</div>
+      <div class="cion">🍽️</div>
       <div class="ctit" data-k="c2t">Ресторан</div>
-      <div class="cpain" data-k="c2p">Бронь вручную — теряют гостей в пиковые часы</div>
+      <div class="cpain" data-k="c2p">Бронь принимают по телефону — в пиковые часы менеджер не успевает, гости уходят к конкурентам</div>
+      <div class="csol" data-k="c2s">Бот принимает бронь, подтверждает моментально и напоминает за час до визита. Менеджер освобождён от телефона.</div>
       <div class="ctag" data-k="bot">Бот-ассистент</div>
     </div>
+
     <div class="cc rv" style="transition-delay:.15s">
-      <div class="cnum">03</div><div class="cion">📚</div>
+      <div class="cion">📚</div>
       <div class="ctit" data-k="c3t">Онлайн-школа</div>
-      <div class="cpain" data-k="c3p">Теряют заинтересованных без автонапоминаний</div>
+      <div class="cpain" data-k="c3p">Теряют заинтересованных без автонапоминаний — клиент «думает» и забывает</div>
+      <div class="csol" data-k="c3s">Бот квалифицирует интерес, напоминает о вебинарах и ведёт клиента до момента оплаты.</div>
       <div class="ctag" data-k="bot">Бот-ассистент</div>
     </div>
+
     <div class="cc rv" style="transition-delay:.2s">
-      <div class="cnum">04</div><div class="cion">❄️</div>
+      <div class="cion">❄️</div>
       <div class="ctit" data-k="c4t">Кондиционеры</div>
-      <div class="cpain" data-k="c4p">Сезонный пик — менеджер не успевает, заявки теряются</div>
+      <div class="cpain" data-k="c4p">В сезонный пик менеджер физически не успевает обработать все входящие — заявки теряются</div>
+      <div class="csol" data-k="c4s">Бот собирает заявки и квалифицирует по типу объекта и бюджету — менеджер получает только горячие контакты.</div>
       <div class="ctag" data-k="real">Реальный кейс</div>
     </div>
+
     <div class="cc rv" style="transition-delay:.25s">
-      <div class="cnum">05</div><div class="cion">🚗</div>
+      <div class="cion">🚗</div>
       <div class="ctit" data-k="c5t">Автосалон</div>
-      <div class="cpain" data-k="c5p">Менеджеры не успевают квалифицировать входящих</div>
+      <div class="cpain" data-k="c5p">Менеджеры тратят время на нецелевые звонки — не успевают квалифицировать всех входящих</div>
+      <div class="csol" data-k="c5s">ИИ-агент задаёт 5 вопросов и передаёт менеджеру только клиентов с реальным намерением купить.</div>
       <div class="ctag" data-k="real">Реальный кейс</div>
     </div>
+
     <div class="cc rv" style="transition-delay:.3s">
-      <div class="cnum">06</div><div class="cion">🎓</div>
+      <div class="cion">🎓</div>
       <div class="ctit" data-k="c6t">Обучение детей</div>
-      <div class="cpain" data-k="c6p">Стандартный подход не учитывает уровень ребёнка</div>
+      <div class="cpain" data-k="c6p">Стандартный подход не учитывает уровень ребёнка — родители не видят прогресса и уходят</div>
+      <div class="csol" data-k="c6s">Бот определяет уровень ребёнка, подбирает программу и отправляет родителям отчёт о прогрессе.</div>
       <div class="ctag" data-k="bot">Бот-ассистент</div>
     </div>
+
     <div class="cc rv" style="transition-delay:.35s">
-      <div class="cnum">07</div><div class="cion">🦷</div>
+      <div class="cion">🦷</div>
       <div class="ctit" data-k="c7t">Стоматология</div>
-      <div class="cpain" data-k="c7p">Регистратор 80% времени на телефоне</div>
+      <div class="cpain" data-k="c7p">Регистратор 80% рабочего времени проводит на телефоне — на живых пациентов не хватает внимания</div>
+      <div class="csol" data-k="c7s">Бот ведёт онлайн-запись, напоминает о визите и отвечает на типовые вопросы. Регистратор работает с пациентами вживую.</div>
       <div class="ctag" data-k="bot">Бот-ассистент</div>
     </div>
+
     <div class="cc rv" style="transition-delay:.4s">
-      <div class="cnum">08</div><div class="cion">👥</div>
+      <div class="cion">👥</div>
       <div class="ctit" data-k="c8t">HR-агентство</div>
-      <div class="cpain" data-k="c8p">200–500 анкет в неделю обрабатывают вручную</div>
+      <div class="cpain" data-k="c8p">200–500 анкет в неделю обрабатываются вручную — HR тратит дни на первичный отбор</div>
+      <div class="csol" data-k="c8s">Бот скринирует кандидатов по критериям клиента и передаёт HR только подходящих — экономия до 80% времени.</div>
       <div class="ctag" data-k="bot">Бот-скрининг</div>
     </div>
+
     <div class="cc rv" style="transition-delay:.45s">
-      <div class="cnum">09</div><div class="cion">💆</div>
+      <div class="cion">💆</div>
       <div class="ctit" data-k="c9t">Эстетическая клиника</div>
-      <div class="cpain" data-k="c9p">Запись на недели вперёд — теряют новых клиентов</div>
+      <div class="cpain" data-k="c9p">Запись на недели вперёд — новые клиенты звонят, не дожидаются ответа и уходят</div>
+      <div class="csol" data-k="c9s">Бот ведёт лист ожидания, уведомляет при появлении свободного окна и удерживает клиента до записи.</div>
       <div class="ctag" data-k="bot">Бот-ассистент</div>
     </div>
+
     <div class="cc rv" style="transition-delay:.5s">
       <div>
-        <div class="cnum" style="color:var(--bronze)">10 · VIP</div>
         <div class="cion">🎙️</div>
         <div class="ctit" data-k="c10t">Репродуктивная медицина (PMA)</div>
-        <div class="cpain" data-k="c10p">Пациенты в стрессе, сотни вопросов 24/7 — врачи перегружены</div>
-        <div class="ctag">Voice AI Agent</div>
+        <div class="cpain" data-k="c10p">Пациенты в стрессе задают сотни вопросов 24/7 — врачи перегружены, качество консультаций падает</div>
+        <div class="csol" data-k="c10s">Голосовой агент на итальянском отвечает 24/7 на вопросы о протоколах, ценах и записи. Врачи сосредоточены на лечении.</div>
+        <div class="ctag">Voice AI Agent · VIP</div>
       </div>
       <div>
         <div class="vip-tech" data-k="c10h">Vapi.ai · ElevenLabs · Italiano</div>
         <a href="#form" class="vip-cta" data-k="c10c">Хочу такого агента →</a>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -433,9 +455,42 @@ footer{background:var(--espresso);color:rgba(255,255,255,.35);padding:22px var(-
 
 <script>
 const T={
-ru:{ncta:'Написать',eye:'AI Automation · Chatbot Specialist',sub:'AI Automation Specialist · Italia · 3 языка · 3 страны',tag:'Я автоматизирую продажи и сервис — через чат-боты и ИИ-агентов. Без лишних слов.',cta1:'Хочу такой же кейс',cta2:'Смотреть кейсы',b1t:'AI Agent',b2t:'Lombardia',b2s:'B2B клиенты',mlbl:'ниш автоматизированы',msub:'3 языка · 3 страны',clbl:'Портфолио',ctit:'10 ниш. <em>Один специалист.</em>',c1t:'Медицинская конференция',c1p:'Ручная регистрация, хаос с расписанием',c2t:'Ресторан',c2p:'Бронь вручную — теряют гостей в пиковые часы',c3t:'Онлайн-школа',c3p:'Теряют заинтересованных без автонапоминаний',c4t:'Кондиционеры',c4p:'Сезонный пик — менеджер не успевает, заявки теряются',c5t:'Автосалон',c5p:'Менеджеры не успевают квалифицировать входящих',c6t:'Обучение детей',c6p:'Стандартный подход не учитывает уровень ребёнка',c7t:'Стоматология',c7p:'Регистратор 80% времени на телефоне',c8t:'HR-агентство',c8p:'200–500 анкет в неделю обрабатывают вручную',c9t:'Эстетическая клиника',c9p:'Запись на недели вперёд — теряют новых клиентов',c10t:'Репродуктивная медицина (PMA)',c10p:'Пациенты в стрессе, сотни вопросов 24/7 — врачи перегружены',c10h:'Vapi.ai · ElevenLabs · Italiano',c10c:'Хочу такого агента →',bot:'Бот-ассистент',real:'Реальный кейс',tlbl:'Работаю с',albl:'Обо мне',atit:'Не агентство.<br><em>Специалист.</em>',aq:'«ИИ — инструмент. Ценность создаёт специалист, который умеет его применить.»',ap1:'Живу и работаю в Италии. Помогаю бизнесу автоматизировать продажи, клиентский сервис и найм — через чат-боты и голосовых ИИ-агентов. Говорю на трёх языках: RU · IT · EN.',ap2:'Работала в трёх странах, знаю специфику итальянского рынка изнутри. Каждый кейс строю под конкретный бизнес — не шаблоны, а решения.',s1:'ниш автоматизировано',s2:'языка',s3:'страны',wlbl:'Почему я',w1t:'Понимаю итальянский рынок',w1p:'Живу в Ломбардии, работаю с местными клиентами. Знаю менталитет и специфику B2B здесь.',w2t:'Три языка без переводчика',w2p:'Бот говорит с вашими клиентами на их языке — RU, IT, EN. Я — с вами на вашем.',w3t:'Результат, не презентация',w3p:'Фокус на метриках: обращения, конверсия, экономия времени сотрудников.',w4t:'VIP-опция — голосовой агент',w4p:'Для бизнеса с высоким чеком — голосовой агент на итальянском. Работает 24/7.',colbl:'Связаться',cotit:'Напишите <em>прямо сейчас</em>',soon:'Скоро',flbl:'Получить кейс',ftit:'Хотите <em>такой же</em> результат?',fsub:'Заполните форму — я пришлю полное описание нужного вам кейса и свяжусь в течение 24 часов.',fn:'Ваше имя',fc:'Компания / Ниша',fw:'WhatsApp / Telegram',fcase:'Интересующий кейс',fsel:'Выберите...',fq:'Коротко о задаче',fbtn:'Получить кейс'},
-it:{ncta:'Scrivimi',eye:'AI Automation · Specialista Chatbot',sub:'AI Automation Specialist · Italia · 3 lingue · 3 paesi',tag:'Automatizzo vendite e customer service tramite chatbot e agenti AI. Senza parole inutili.',cta1:'Voglio lo stesso risultato',cta2:'Guarda i casi',b1t:'AI Agent',b2t:'Lombardia',b2s:'Clienti B2B',mlbl:'nicchie automatizzate',msub:'3 lingue · 3 paesi',clbl:'Portfolio',ctit:'10 nicchie. <em>Un\'unica specialista.</em>',c1t:'Conferenza medica',c1p:'Registrazione manuale, caos nelle agende',c2t:'Ristorante',c2p:'Prenotazioni manuali — perdono clienti nelle ore di punta',c3t:'Scuola online',c3p:'Perdono iscritti senza promemoria automatici',c4t:'Climatizzatori',c4p:'In stagione il manager non riesce a gestire tutte le richieste',c5t:'Concessionaria auto',c5p:'I venditori non qualificano tutti i contatti in tempo',c6t:'Formazione bambini',c6p:'L\'approccio standard non considera il livello del bambino',c7t:'Odontoiatria',c7p:'Il receptionist è al telefono l\'80% del tempo',c8t:'Agenzia HR',c8p:'200–500 candidature a settimana gestite manualmente',c9t:'Clinica estetica',c9p:'Liste d\'attesa di settimane — perdono nuovi clienti',c10t:'Medicina riproduttiva (PMA)',c10p:'Pazienti in stress, centinaia di domande 24/7 — medici sovraccarichi',c10h:'Vapi.ai · ElevenLabs · Italiano',c10c:'Voglio questo agente →',bot:'Bot assistente',real:'Caso reale',tlbl:'Lavoro con',albl:'Chi sono',atit:'Non un\'agenzia.<br><em>Una specialista.</em>',aq:'«L\'AI è uno strumento. Il valore lo crea lo specialista che sa usarlo.»',ap1:'Vivo e lavoro in Italia. Aiuto le aziende ad automatizzare vendite, customer service e recruiting tramite chatbot e agenti AI vocali. Parlo tre lingue: RU · IT · EN.',ap2:'Ho lavorato in tre paesi e conosco il mercato italiano dall\'interno. Ogni caso è costruito per un business specifico — non template, ma soluzioni.',s1:'nicchie automatizzate',s2:'lingue',s3:'paesi',wlbl:'Perché scegliermi',w1t:'Conosco il mercato italiano',w1p:'Vivo in Lombardia e lavoro con clienti locali. Conosco la mentalità e le specificità B2B qui.',w2t:'Tre lingue senza traduttore',w2p:'Il bot parla con i tuoi clienti nella loro lingua — RU, IT, EN. Io parlo con te nella tua.',w3t:'Risultati, non presentazioni',w3p:'Focus su metriche concrete: contatti, conversioni, ore risparmiate dal team.',w4t:'Opzione VIP — agente vocale',w4p:'Per business di fascia alta — agente vocale in italiano. Attivo 24/7.',colbl:'Contatti',cotit:'Scrivimi <em>adesso</em>',soon:'Presto',flbl:'Richiedi il caso',ftit:'Vuoi lo <em>stesso risultato?</em>',fsub:'Compila il modulo — ti mando la descrizione completa del caso e ti contatto entro 24 ore.',fn:'Il tuo nome',fc:'Azienda / Nicchia',fw:'WhatsApp / Telegram',fcase:'Caso di interesse',fsel:'Seleziona...',fq:'Descrivi brevemente la tua esigenza',fbtn:'Richiedi il caso'},
-en:{ncta:'Message me',eye:'AI Automation · Chatbot Specialist',sub:'AI Automation Specialist · Italy · 3 languages · 3 countries',tag:'I automate sales and customer service through chatbots and AI agents. No fluff.',cta1:'I want the same result',cta2:'See cases',b1t:'AI Agent',b2t:'Lombardia',b2s:'B2B clients',mlbl:'niches automated',msub:'3 languages · 3 countries',clbl:'Portfolio',ctit:'10 niches. <em>One specialist.</em>',c1t:'Medical Conference',c1p:'Manual registration, scheduling chaos',c2t:'Restaurant',c2p:'Manual booking calls — losing guests during peak hours',c3t:'Online School',c3p:'Losing prospects without automated follow-ups',c4t:'Air Conditioning',c4p:'Peak season — leads lost, manager overwhelmed',c5t:'Car Dealership',c5p:'Sales reps can\'t qualify all incoming leads fast enough',c6t:'Children\'s Education',c6p:'Standard approach ignores each child\'s level',c7t:'Dentistry',c7p:'Receptionist on the phone 80% of the time',c8t:'HR Agency',c8p:'200–500 applications per week processed manually',c9t:'Aesthetic Clinic',c9p:'Weeks-long waitlists — losing new patients',c10t:'Reproductive Medicine (PMA)',c10p:'Stressed patients, hundreds of questions 24/7 — doctors overwhelmed',c10h:'Vapi.ai · ElevenLabs · Italian voice',c10c:'I want this agent →',bot:'AI Assistant',real:'Real case',tlbl:'I work with',albl:'About me',atit:'Not an agency.<br><em>A specialist.</em>',aq:'"AI is a tool. Value is created by the specialist who knows how to use it."',ap1:'I live and work in Italy. I help businesses automate sales, customer service, and hiring through chatbots and voice AI agents. I speak three languages: RU · IT · EN.',ap2:'I\'ve worked in three countries and know the Italian market from the inside. Every case is built for a specific business — not templates, but real solutions.',s1:'niches automated',s2:'languages',s3:'countries',wlbl:'Why me',w1t:'I understand the Italian market',w1p:'I live in Lombardia and work with local clients. I know the B2B mindset and dynamics here.',w2t:'Three languages, no translator',w2p:'The bot speaks to your customers in their language — RU, IT, EN. I speak to you in yours.',w3t:'Results, not presentations',w3p:'Focus on concrete metrics: inquiries, conversion, team hours saved.',w4t:'VIP option — voice agent',w4p:'For premium businesses — Italian-language voice agent. Works 24/7.',colbl:'Contact',cotit:'Reach out <em>right now</em>',soon:'Coming soon',flbl:'Get the case',ftit:'Want <em>the same result?</em>',fsub:'Fill out the form — I\'ll send you the full case description and reach out within 24 hours.',fn:'Your name',fc:'Company / Niche',fw:'WhatsApp / Telegram',fcase:'Case of interest',fsel:'Select...',fq:'Brief description of your task',fbtn:'Get the case'}
+ru:{ncta:'Написать',eye:'AI Automation · Chatbot Specialist',sub:'AI Automation Specialist · Italia · 3 языка · 3 страны',tag:'Я автоматизирую продажи и сервис — через чат-боты и ИИ-агентов. Без лишних слов.',cta1:'Хочу такой же кейс',cta2:'Смотреть кейсы',b1t:'AI Agent',b2t:'Lombardia',b2s:'B2B клиенты',mlbl:'ниш автоматизированы',msub:'3 языка · 3 страны',clbl:'Портфолио',ctit:'10 ниш. <em>Один специалист.</em>',
+c1t:'Медицинская конференция',c1p:'Ручная регистрация, хаос с расписанием — участники задают одни и те же вопросы по несколько раз',c1s:'Бот ведёт регистрацию, выдаёт электронные билеты и отвечает на вопросы по программе. Работает 24/7 на 3 языках.',
+c2t:'Ресторан',c2p:'Бронь принимают по телефону — в пиковые часы менеджер не успевает, гости уходят к конкурентам',c2s:'Бот принимает бронь, подтверждает моментально и напоминает за час до визита. Менеджер освобождён от телефона.',
+c3t:'Онлайн-школа',c3p:'Теряют заинтересованных без автонапоминаний — клиент думает и забывает',c3s:'Бот квалифицирует интерес, напоминает о вебинарах и ведёт клиента до момента оплаты.',
+c4t:'Кондиционеры',c4p:'В сезонный пик менеджер физически не успевает обработать все входящие — заявки теряются',c4s:'Бот собирает заявки и квалифицирует по типу объекта и бюджету — менеджер получает только горячие контакты.',
+c5t:'Автосалон',c5p:'Менеджеры тратят время на нецелевые звонки — не успевают квалифицировать всех входящих',c5s:'ИИ-агент задаёт 5 вопросов и передаёт менеджеру только клиентов с реальным намерением купить.',
+c6t:'Обучение детей',c6p:'Стандартный подход не учитывает уровень ребёнка — родители не видят прогресса и уходят',c6s:'Бот определяет уровень ребёнка, подбирает программу и отправляет родителям отчёт о прогрессе.',
+c7t:'Стоматология',c7p:'Регистратор 80% рабочего времени проводит на телефоне — на живых пациентов не хватает внимания',c7s:'Бот ведёт онлайн-запись, напоминает о визите и отвечает на типовые вопросы. Регистратор работает с пациентами вживую.',
+c8t:'HR-агентство',c8p:'200–500 анкет в неделю обрабатываются вручную — HR тратит дни на первичный отбор',c8s:'Бот скринирует кандидатов по критериям клиента и передаёт HR только подходящих — экономия до 80% времени.',
+c9t:'Эстетическая клиника',c9p:'Запись на недели вперёд — новые клиенты звонят, не дожидаются ответа и уходят',c9s:'Бот ведёт лист ожидания, уведомляет при появлении свободного окна и удерживает клиента до записи.',
+c10t:'Репродуктивная медицина (PMA)',c10p:'Пациенты в стрессе задают сотни вопросов 24/7 — врачи перегружены, качество консультаций падает',c10s:'Голосовой агент на итальянском отвечает 24/7 на вопросы о протоколах, ценах и записи. Врачи сосредоточены на лечении.',
+c10h:'Vapi.ai · ElevenLabs · Italiano',c10c:'Хочу такого агента →',bot:'Бот-ассистент',real:'Реальный кейс',tlbl:'Работаю с',albl:'Обо мне',atit:'Не агентство.<br><em>Специалист.</em>',aq:'«ИИ — инструмент. Ценность создаёт специалист, который умеет его применить.»',ap1:'Живу и работаю в Италии. Помогаю бизнесу автоматизировать продажи, клиентский сервис и найм — через чат-боты и голосовых ИИ-агентов. Говорю на трёх языках: RU · IT · EN.',ap2:'Работала в трёх странах, знаю специфику итальянского рынка изнутри. Каждый кейс строю под конкретный бизнес — не шаблоны, а решения.',s1:'ниш автоматизировано',s2:'языка',s3:'страны',wlbl:'Почему я',w1t:'Понимаю итальянский рынок',w1p:'Живу в Ломбардии, работаю с местными клиентами. Знаю менталитет и специфику B2B здесь.',w2t:'Три языка без переводчика',w2p:'Бот говорит с вашими клиентами на их языке — RU, IT, EN. Я — с вами на вашем.',w3t:'Результат, не презентация',w3p:'Фокус на метриках: обращения, конверсия, экономия времени сотрудников.',w4t:'VIP-опция — голосовой агент',w4p:'Для бизнеса с высоким чеком — голосовой агент на итальянском. Работает 24/7.',colbl:'Связаться',cotit:'Напишите <em>прямо сейчас</em>',soon:'Скоро',flbl:'Получить кейс',ftit:'Хотите <em>такой же</em> результат?',fsub:'Заполните форму — я пришлю полное описание нужного вам кейса и свяжусь в течение 24 часов.',fn:'Ваше имя',fc:'Компания / Ниша',fw:'WhatsApp / Telegram',fcase:'Интересующий кейс',fsel:'Выберите...',fq:'Коротко о задаче',fbtn:'Получить кейс'},
+it:{ncta:'Scrivimi',eye:'AI Automation · Specialista Chatbot',sub:'AI Automation Specialist · Italia · 3 lingue · 3 paesi',tag:'Automatizzo vendite e customer service tramite chatbot e agenti AI. Senza parole inutili.',cta1:'Voglio lo stesso risultato',cta2:'Guarda i casi',b1t:'AI Agent',b2t:'Lombardia',b2s:'Clienti B2B',mlbl:'nicchie automatizzate',msub:'3 lingue · 3 paesi',clbl:'Portfolio',ctit:'10 nicchie. <em>Un\'unica specialista.</em>',
+c1t:'Conferenza medica',c1p:'Iscrizioni manuali, caos nelle agende — i partecipanti fanno sempre le stesse domande',c1s:'Il bot gestisce le iscrizioni, emette biglietti digitali e risponde alle domande sul programma. Attivo 24/7 in 3 lingue.',
+c2t:'Ristorante',c2p:'Prenotazioni solo per telefono — nelle ore di punta il manager non riesce, gli ospiti vanno dalla concorrenza',c2s:'Il bot accetta prenotazioni, conferma istantaneamente e invia un promemoria un\'ora prima. Il manager è libero dal telefono.',
+c3t:'Scuola online',c3p:'Perdono iscritti senza promemoria automatici — il cliente ci pensa e poi dimentica',c3s:'Il bot qualifica l\'interesse, ricorda i webinar e accompagna il cliente fino al pagamento.',
+c4t:'Climatizzatori',c4p:'In stagione il manager non riesce fisicamente a gestire tutte le richieste — le opportunità si perdono',c4s:'Il bot raccoglie richieste e le qualifica per tipo di immobile e budget — il manager riceve solo contatti pronti.',
+c5t:'Concessionaria auto',c5p:'I venditori perdono tempo su chiamate non qualificate — non riescono a seguire tutti i contatti in entrata',c5s:'L\'agente AI pone 5 domande e passa al manager solo i clienti con reale intenzione di acquisto.',
+c6t:'Formazione bambini',c6p:'L\'approccio standard non considera il livello del bambino — i genitori non vedono progressi e se ne vanno',c6s:'Il bot valuta il livello del bambino, sceglie il programma e invia ai genitori report sui progressi.',
+c7t:'Odontoiatria',c7p:'Il receptionist è al telefono l\'80% del tempo — ai pazienti presenti non resta attenzione sufficiente',c7s:'Il bot gestisce prenotazioni online, manda promemoria e risponde alle FAQ. Il receptionist si concentra sui pazienti.',
+c8t:'Agenzia HR',c8p:'200–500 candidature a settimana gestite manualmente — l\'HR passa giorni sulla preselezione',c8s:'Il bot filtra i candidati secondo i criteri del cliente e invia all\'HR solo i profili adeguati — risparmio fino all\'80% del tempo.',
+c9t:'Clinica estetica',c9p:'Liste d\'attesa di settimane — i nuovi clienti chiamano, non aspettano risposta e vanno altrove',c9s:'Il bot gestisce la lista d\'attesa, avvisa quando si libera uno slot e mantiene il contatto con il paziente fino alla prenotazione.',
+c10t:'Medicina riproduttiva (PMA)',c10p:'Pazienti in stress, centinaia di domande 24/7 — i medici sono sovraccarichi, la qualità delle consulenze cala',c10s:'L\'agente vocale in italiano risponde 24/7 su protocolli, prezzi e appuntamenti. I medici si concentrano sulle cure.',
+c10h:'Vapi.ai · ElevenLabs · Italiano',c10c:'Voglio questo agente →',bot:'Bot assistente',real:'Caso reale',tlbl:'Lavoro con',albl:'Chi sono',atit:'Non un\'agenzia.<br><em>Una specialista.</em>',aq:'«L\'AI è uno strumento. Il valore lo crea lo specialista che sa usarlo.»',ap1:'Vivo e lavoro in Italia. Aiuto le aziende ad automatizzare vendite, customer service e recruiting tramite chatbot e agenti AI vocali. Parlo tre lingue: RU · IT · EN.',ap2:'Ho lavorato in tre paesi e conosco il mercato italiano dall\'interno. Ogni caso è costruito per un business specifico — non template, ma soluzioni.',s1:'nicchie automatizzate',s2:'lingue',s3:'paesi',wlbl:'Perché scegliermi',w1t:'Conosco il mercato italiano',w1p:'Vivo in Lombardia e lavoro con clienti locali. Conosco la mentalità e le specificità B2B qui.',w2t:'Tre lingue senza traduttore',w2p:'Il bot parla con i tuoi clienti nella loro lingua — RU, IT, EN. Io parlo con te nella tua.',w3t:'Risultati, non presentazioni',w3p:'Focus su metriche concrete: contatti, conversioni, ore risparmiate dal team.',w4t:'Opzione VIP — agente vocale',w4p:'Per business di fascia alta — agente vocale in italiano. Attivo 24/7.',colbl:'Contatti',cotit:'Scrivimi <em>adesso</em>',soon:'Presto',flbl:'Richiedi il caso',ftit:'Vuoi lo <em>stesso risultato?</em>',fsub:'Compila il modulo — ti mando la descrizione completa del caso e ti contatto entro 24 ore.',fn:'Il tuo nome',fc:'Azienda / Nicchia',fw:'WhatsApp / Telegram',fcase:'Caso di interesse',fsel:'Seleziona...',fq:'Descrivi brevemente la tua esigenza',fbtn:'Richiedi il caso'},
+en:{ncta:'Message me',eye:'AI Automation · Chatbot Specialist',sub:'AI Automation Specialist · Italy · 3 languages · 3 countries',tag:'I automate sales and customer service through chatbots and AI agents. No fluff.',cta1:'I want the same result',cta2:'See cases',b1t:'AI Agent',b2t:'Lombardia',b2s:'B2B clients',mlbl:'niches automated',msub:'3 languages · 3 countries',clbl:'Portfolio',ctit:'10 niches. <em>One specialist.</em>',
+c1t:'Medical Conference',c1p:'Manual registrations, scheduling chaos — attendees ask the same questions over and over',c1s:'The bot handles registrations, issues digital tickets, and answers program questions. Runs 24/7 in 3 languages.',
+c2t:'Restaurant',c2p:'Bookings taken by phone only — during peak hours the manager can\'t keep up and guests go elsewhere',c2s:'The bot accepts bookings, confirms instantly, and sends a reminder 1 hour before. Manager freed from the phone.',
+c3t:'Online School',c3p:'Losing prospects without automated follow-ups — the client thinks about it and forgets',c3s:'The bot qualifies interest, reminds about webinars, and guides prospects through to payment.',
+c4t:'Air Conditioning',c4p:'Peak season overwhelms the manager — leads pile up and get lost',c4s:'The bot collects requests and qualifies by property type and budget — manager gets only hot contacts ready to buy.',
+c5t:'Car Dealership',c5p:'Sales reps waste time on unqualified calls — can\'t keep up with all incoming leads',c5s:'The AI agent asks 5 questions and passes to the manager only clients with real purchase intent.',
+c6t:'Children\'s Education',c6p:'Standard approach ignores each child\'s level — parents see no progress and leave',c6s:'The bot assesses the child\'s level, selects the right program, and sends parents progress reports.',
+c7t:'Dentistry',c7p:'Receptionist on the phone 80% of the time — not enough attention left for in-person patients',c7s:'The bot manages online booking, sends reminders, and answers FAQs. Reception staff focus on patients.',
+c8t:'HR Agency',c8p:'200–500 applications per week processed manually — HR spends days on initial screening',c8s:'The bot screens candidates by client criteria and forwards only suitable profiles to HR — saving up to 80% of screening time.',
+c9t:'Aesthetic Clinic',c9p:'Weeks-long waitlists — new clients call, don\'t wait for an answer, and go elsewhere',c9s:'The bot manages the waitlist, notifies when a slot opens, and keeps patients engaged until booking.',
+c10t:'Reproductive Medicine (PMA)',c10p:'Stressed patients ask hundreds of questions 24/7 — doctors are overwhelmed, consultation quality drops',c10s:'Italian-language voice agent answers 24/7 on protocols, prices, and appointments. Doctors focus on treatment.',
+c10h:'Vapi.ai · ElevenLabs · Italian voice',c10c:'I want this agent →',bot:'AI Assistant',real:'Real case',tlbl:'I work with',albl:'About me',atit:'Not an agency.<br><em>A specialist.</em>',aq:'"AI is a tool. Value is created by the specialist who knows how to use it."',ap1:'I live and work in Italy. I help businesses automate sales, customer service, and hiring through chatbots and voice AI agents. I speak three languages: RU · IT · EN.',ap2:'I\'ve worked in three countries and know the Italian market from the inside. Every case is built for a specific business — not templates, but real solutions.',s1:'niches automated',s2:'languages',s3:'countries',wlbl:'Why me',w1t:'I understand the Italian market',w1p:'I live in Lombardia and work with local clients. I know the B2B mindset and dynamics here.',w2t:'Three languages, no translator',w2p:'The bot speaks to your customers in their language — RU, IT, EN. I speak to you in yours.',w3t:'Results, not presentations',w3p:'Focus on concrete metrics: inquiries, conversion, team hours saved.',w4t:'VIP option — voice agent',w4p:'For premium businesses — Italian-language voice agent. Works 24/7.',colbl:'Contact',cotit:'Reach out <em>right now</em>',soon:'Coming soon',flbl:'Get the case',ftit:'Want <em>the same result?</em>',fsub:'Fill out the form — I\'ll send you the full case description and reach out within 24 hours.',fn:'Your name',fc:'Company / Niche',fw:'WhatsApp / Telegram',fcase:'Case of interest',fsel:'Select...',fq:'Brief description of your task',fbtn:'Get the case'}
 };
 
 let lang='ru';
