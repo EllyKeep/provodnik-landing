@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elena Gurianova — AI Automation & Chatbot Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#F8F3EC;
+  --cream-mid:#EDE8DE;
+  --cream-deep:#DDD5C8;
+  --espresso:#1A1208;
+  --terra:#C4431A;
+  --cypress:#2E5040;
+  --bronze:#B5945A;
+  --muted:#6B6156;
+  --fd:'Fraunces',serif;
+  --fb:'Plus Jakarta Sans',sans-serif;
+  --nav-h:72px;
+  --pad:clamp(24px,4vw,72px);
+  --sec:clamp(64px,8vw,120px);
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--espresso);font-family:var(--fb);font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* noise */
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.022;pointer-events:none;z-index:9999}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);z-index:200;transition:background .3s,box-shadow .3s}
+nav.s{background:rgba(248,243,236,.96);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--cream-deep)}
+.logo{font-family:var(--fd);font-style:italic;font-size:1.45rem;font-weight:600;color:var(--espresso);text-decoration:none;letter-spacing:-.02em}
+.logo span{color:var(--terra)}
+.nav-r{display:flex;align-items:center;gap:28px}
+.ls{display:flex;gap:2px}
+.lb{background:none;border:none;cursor:pointer;font-family:var(--fb);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:4px 7px;transition:color .2s}
+.lb.on{color:var(--espresso)}
+.lb:hover{color:var(--espresso)}
+.ncta{display:inline-flex;align-items:center;gap:8px;background:var(--terra);color:#fff;text-decoration:none;font-size:.84rem;font-weight:600;padding:10px 20px;border-radius:100px;transition:background .2s,transform .2s}
+.ncta:hover{background:#a8360f;transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:var(--nav-h) var(--pad) 0;gap:40px}
+.h-eye{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:22px}
+.h-eye::before{content:'';width:22px;height:1px;background:var(--terra)}
+h1.h-name{font-family:var(--fd);font-style:italic;font-size:clamp(48px,7vw,100px);font-weight:300;line-height:1;letter-spacing:-.03em;margin-bottom:14px}
+h1.h-name em{font-style:normal;color:var(--terra)}
+.h-sub{font-size:.9rem;color:var(--muted);margin-bottom:28px;letter-spacing:.01em}
+.h-tag{font-family:var(--fd);font-size:clamp(18px,2vw,26px);font-weight:500;line-height:1.45;max-width:420px;margin-bottom:44px}
+.h-act{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:9px;background:var(--espresso);color:#fff;text-decoration:none;font-size:.88rem;font-weight:600;padding:14px 28px;border-radius:100px;transition:background .2s,transform .2s}
+.btn-p:hover{background:#3a2510;transform:translateY(-2px)}
+.btn-s{display:inline-flex;align-items:center;color:var(--espresso);text-decoration:none;font-size:.88rem;font-weight:500;padding:14px 0;border-bottom:1.5px solid var(--espresso);transition:color .2s,border-color .2s}
+.btn-s:hover{color:var(--terra);border-color:var(--terra)}
+
+/* hero right — medallion */
+.h-right{display:flex;align-items:center;justify-content:center;position:relative}
+.medalwrap{position:relative;width:clamp(260px,34vw,460px);aspect-ratio:1}
+.medal-ring{position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--cream-deep);animation:spin 32s linear infinite}
+.medal-svg{position:absolute;inset:0}
+.medal-inner{position:absolute;inset:18%;border-radius:50%;background:var(--cream-mid);border:1.5px solid var(--cream-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}
+.m-big{font-family:var(--fd);font-size:clamp(38px,5.5vw,68px);font-weight:600;line-height:1}
+.m-lbl{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.m-div{width:36px;height:1px;background:var(--cream-deep);margin:10px auto}
+.m-sub{font-size:.75rem;color:var(--muted)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.badge{position:absolute;background:#fff;border:1px solid var(--cream-deep);border-radius:12px;padding:11px 15px;box-shadow:0 8px 28px rgba(26,18,8,.07);display:flex;align-items:center;gap:10px}
+.badge-1{top:12%;right:-6%}
+.badge-2{bottom:18%;left:-9%}
+.bi{width:34px;height:34px;border-radius:8px;background:var(--terra);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.bt strong{display:block;font-size:.8rem;font-weight:600}
+.bt span{font-size:.7rem;color:var(--muted)}
+
+/* ── SECTION BASE ── */
+.sec{padding:var(--sec) var(--pad)}
+.s-lbl{display:inline-flex;align-items:center;gap:10px;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.s-lbl::before{content:'';width:18px;height:1px;background:var(--muted)}
+.s-title{font-family:var(--fd);font-size:clamp(30px,4.5vw,58px);font-weight:400;letter-spacing:-.02em;line-height:1.08}
+.s-title em{font-style:italic;color:var(--terra)}
+
+/* ── CASES ── */
+.cases-hd{margin-bottom:52px}
+.cgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.cc{background:var(--cream-mid);border:1px solid var(--cream-deep);border-radius:16px;padding:26px;cursor:pointer;transition:transform .3s,box-shadow .3s,background .3s;position:relative;overflow:hidden}
+.cc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.cc:hover{transform:translateY(-4px);box-shadow:0 14px 44px rgba(26,18,8,.09);background:#fff}
+.cc:hover::after{transform:scaleX(1)}
+.cc:nth-child(1){grid-column:span 5}
+.cc:nth-child(2){grid-column:span 7}
+.cc:nth-child(3){grid-column:span 4}
+.cc:nth-child(4){grid-column:span 4}
+.cc:nth-child(5){grid-column:span 4}
+.cc:nth-child(6){grid-column:span 6}
+.cc:nth-child(7){grid-column:span 6}
+.cc:nth-child(8){grid-column:span 7}
+.cc:nth-child(9){grid-column:span 5}
+.cc:nth-child(10){grid-column:span 12;background:var(--espresso);display:grid;grid-template-columns:1fr auto;align-items:center;gap:32px}
+.cc:nth-child(10)::after{background:var(--bronze)}
+.cc:nth-child(10):hover{background:#241a0e}
+.cc:nth-child(10) .cnum,.cc:nth-child(10) .ctit{color:#fff}
+.cc:nth-child(10) .cpain{color:rgba(255,255,255,.55)}
+.cc:nth-child(10) .ctag{background:rgba(255,255,255,.1);color:var(--bronze)}
+.cnum{font-family:var(--fd);font-size:.76rem;font-weight:600;color:var(--muted);letter-spacing:.06em;margin-bottom:14px}
+.cion{font-size:1.7rem;margin-bottom:10px}
+.ctit{font-family:var(--fd);font-size:clamp(15px,1.7vw,21px);font-weight:500;line-height:1.25;margin-bottom:7px}
+.cpain{font-size:.8rem;color:var(--muted);line-height:1.5}
+.ctag{display:inline-block;margin-top:13px;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);background:rgba(196,67,26,.1);padding:3px 10px;border-radius:100px}
+.vip-cta{display:inline-flex;align-items:center;gap:8px;background:var(--bronze);color:#fff;text-decoration:none;font-size:.84rem;font-weight:600;padding:12px 22px;border-radius:100px;white-space:nowrap;flex-shrink:0}
+.vip-tech{font-size:.78rem;color:rgba(255,255,255,.45);margin-bottom:10px;text-align:right}
+
+/* ── TOOLS ── */
+.tools{background:var(--cream-mid);border-top:1px solid var(--cream-deep);border-bottom:1px solid var(--cream-deep);padding:44px var(--pad)}
+.tools-lbl{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:28px}
+.tstrip{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px}
+.tp{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--cream-deep);border-radius:100px;padding:7px 16px;font-size:.8rem;font-weight:500;transition:box-shadow .2s}
+.tp:hover{box-shadow:0 4px 16px rgba(26,18,8,.06)}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);align-items:start}
+.a-quote{font-family:var(--fd);font-style:italic;font-size:clamp(20px,2.5vw,32px);font-weight:400;line-height:1.45;border-left:3px solid var(--terra);padding-left:22px;margin:28px 0}
+.a-txt{font-size:.92rem;line-height:1.8;color:var(--muted);margin-bottom:14px}
+.a-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;padding-top:36px;border-top:1px solid var(--cream-deep)}
+.sn{font-family:var(--fd);font-size:clamp(30px,4vw,46px);font-weight:500;line-height:1}
+.sl{font-size:.76rem;color:var(--muted);margin-top:3px;line-height:1.4}
+.why-list{list-style:none;margin-top:44px}
+.wi{display:flex;gap:16px;padding:22px 0;border-bottom:1px solid var(--cream-deep)}
+.wi:first-child{padding-top:0}
+.wn{font-family:var(--fd);font-style:italic;font-size:1.3rem;color:var(--terra);min-width:28px;line-height:1;margin-top:2px}
+.wc strong{display:block;font-size:.92rem;font-weight:600;margin-bottom:3px}
+.wc p{font-size:.82rem;color:var(--muted);line-height:1.6}
+
+/* ── CONTACTS ── */
+.csec{background:var(--espresso);color:#fff}
+.csec .s-lbl{color:rgba(255,255,255,.4)}
+.csec .s-lbl::before{background:rgba(255,255,255,.25)}
+.csec .s-title{color:#fff}
+.csec .s-title em{color:var(--bronze)}
+.cgr{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:52px}
+.ci{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px;text-decoration:none;color:#fff;transition:background .2s,transform .2s;display:block}
+.ci:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+.ci-ico{font-size:1.5rem;margin-bottom:10px}
+.ci-pl{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:3px}
+.ci-val{font-size:.86rem;font-weight:500}
+.ci.dim{opacity:.45;pointer-events:none}
+
+/* ── FORM ── */
+.fsec{background:var(--cream-mid)}
+.finner{max-width:700px}
+.fsub{font-size:.92rem;color:var(--muted);margin-top:14px;margin-bottom:44px;line-height:1.7;max-width:460px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{margin-bottom:18px}
+.fg label{display:block;font-size:.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.fg input,.fg select,.fg textarea{width:100%;background:#fff;border:1.5px solid var(--cream-deep);border-radius:10px;padding:13px 17px;font-family:var(--fb);font-size:.9rem;color:var(--espresso);outline:none;transition:border-color .2s,box-shadow .2s;appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--terra);box-shadow:0 0 0 3px rgba(196,67,26,.1)}
+.fg textarea{resize:vertical;min-height:96px}
+.fsub-btn{display:inline-flex;align-items:center;gap:9px;background:var(--terra);color:#fff;border:none;cursor:pointer;font-family:var(--fb);font-size:.92rem;font-weight:600;padding:15px 34px;border-radius:100px;transition:background .2s,transform .2s;margin-top:6px}
+.fsub-btn:hover{background:#a8360f;transform:translateY(-2px)}
+
+/* ── FOOTER ── */
+footer{background:var(--espresso);color:rgba(255,255,255,.35);padding:22px var(--pad);display:flex;align-items:center;justify-content:space-between;font-size:.78rem}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .65s,transform .65s}
+.rv.on{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .h-right{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  .cgrid{grid-template-columns:1fr 1fr}
+  .cc{grid-column:span 1!important}
+  .cc:nth-child(10){grid-column:span 2!important;grid-template-columns:1fr}
+  .vip-tech{text-align:left}
+}
+@media(max-width:580px){
+  .cgrid{grid-template-columns:1fr}
+  .cc:nth-child(10){grid-column:span 1!important}
+  .a-stats{grid-template-columns:1fr 1fr}
+  footer{flex-direction:column;gap:6px;text-align:center}
+  .nav-r .ncta .ncta-t{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="logo">Pro<span>vodnik</span></a>
+  <div class="nav-r">
+    <div class="ls">
+      <button class="lb on" onclick="L('ru')">RU</button>
+      <button class="lb" onclick="L('it')">IT</button>
+      <button class="lb" onclick="L('en')">EN</button>
+    </div>
+    <a href="https://wa.me/393294142840" class="ncta" target="_blank">💬 <span class="ncta-t" data-k="ncta">Написать</span></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="h-eye" data-k="eye">AI Automation · Chatbot Specialist</div>
+    <h1 class="h-name">Elena<br><em>Gurianova</em></h1>
+    <p class="h-sub" data-k="sub">AI Automation Specialist · Italia · 3 языка · 3 страны</p>
+    <p class="h-tag" data-k="tag">Я автоматизирую продажи и сервис — через чат-боты и ИИ-агентов. Без лишних слов.</p>
+    <div class="h-act">
+      <a href="#form" class="btn-p"><span data-k="cta1">Хочу такой же кейс</span> →</a>
+      <a href="#cases" class="btn-s" data-k="cta2">Смотреть кейсы</a>
+    </div>
+  </div>
+  <div class="h-right">
+    <div class="badge badge-1">
+      <div class="bi">🤖</div>
+      <div class="bt"><strong data-k="b1t">AI Agent</strong><span>Vapi · ElevenLabs</span></div>
+    </div>
+    <div class="medalwrap">
+      <div class="medal-ring"></div>
+      <svg class="medal-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs><path id="cp" d="M100,100 m-75,0 a75,75 0 1,1 150,0 a75,75 0 1,1 -150,0"/></defs>
+        <text font-family="Plus Jakarta Sans,sans-serif" font-size="9" font-weight="500" fill="#6B6156" letter-spacing="3.8">
+          <textPath href="#cp">AI AUTOMATION · CHATBOT SPECIALIST · PROVODNIK · ITALIA ·</textPath>
+        </text>
+      </svg>
+      <div class="medal-inner">
+        <div class="m-big">10+</div>
+        <div class="m-lbl" data-k="mlbl">ниш автоматизированы</div>
+        <div class="m-div"></div>
+        <div class="m-sub" data-k="msub">3 языка · 3 страны</div>
+      </div>
+    </div>
+    <div class="badge badge-2">
+      <div class="bi">🇮🇹</div>
+      <div class="bt"><strong data-k="b2t">Lombardia</strong><span data-k="b2s">B2B клиенты</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="sec" id="cases">
+  <div class="cases-hd rv">
+    <div class="s-lbl" data-k="clbl">Портфолио</div>
+    <h2 class="s-title" data-k="ctit">10 ниш. <em>Один специалист.</em></h2>
+  </div>
+  <div class="cgrid">
+    <div class="cc rv" style="transition-delay:.05s">
+      <div class="cnum">01</div><div class="cion">🏥</div>
+      <div class="ctit" data-k="c1t">Медицинская конференция</div>
+      <div class="cpain" data-k="c1p">Ручная регистрация, хаос с расписанием</div>
+      <div class="ctag" data-k="bot">Бот-ассистент</div>
+    </div>
+    <div class="cc rv" style="transition-delay:.1s">
+      <div class="cnum">02</div><div class="cion">🍽️</div>
+      <div class="ctit" data-k="c2t">Ресторан</div>
+      <div class="cpain" data-k="c2p">Бронь вручную — теряют гостей в пиковые часы</div>
+      <div class="ctag" data-k="bot">Бот-ассистент</div>
+    </div>
+    <div class="cc rv" style="transition-delay:.15s">
+      <div class="cnum">03</div><div class="cion">📚</div>
+      <div class="ctit" data-k="c3t">Онлайн-школа</div>
+      <div class="cpain" data-k="c3p">Теряют заинтересованных без автонапоминаний</div>
+      <div class="ctag" data-k="bot">Бот-ассистент</div>
+    </div>
+    <div class="cc rv" style="transition-delay:.2s">
+      <div class="cnum">04</div><div class="cion">❄️</div>
+      <div class="ctit" data-k="c4t">Кондиционеры</div>
+      <div class="cpain" data-k="c4p">Сезонный пик — менеджер не успевает, заявки теряются</div>
+      <div class="ctag" data-k="real">Реальный кейс</div>
+    </div>
+    <div class="cc rv" style="transition-delay:.25s">
+      <div class="cnum">05</div><div class="cion">🚗</div>
+      <div class="ctit" data-k="c5t">Автосалон</div>
+      <div class="cpain" data-k="c5p">Менеджеры не успевают квалифицировать входящих</div>
+      <div class="ctag" data-k="real">Реальный кейс</div>
+    </div>
+    <div class="cc rv" style="transition-delay:.3s">
+      <div class="cnum">06</div><div class="cion">🎓</div>
+      <div class="ctit" data-k="c6t">Обучение детей</div>
+      <div class="cpain" data-k="c6p">Стандартный подход не учитывает уровень ребёнка</div>
+      <div class="ctag" data-k="bot">Бот-ассистент</div>
+    </div>
+    <div class="cc rv" style="transition-delay:.35s">
+      <div class="cnum">07</div><div class="cion">🦷</div>
+      <div class="ctit" data-k="c7t">Стоматология</div>
+      <div class="cpain" data-k="c7p">Регистратор 80% времени на телефоне</div>
+      <div class="ctag" data-k="bot">Бот-ассистент</div>
+    </div>
+    <div class="cc rv" style="transition-delay:.4s">
+      <div class="cnum">08</div><div class="cion">👥</div>
+      <div class="ctit" data-k="c8t">HR-агентство</div>
+      <div class="cpain" data-k="c8p">200–500 анкет в неделю обрабатывают вручную</div>
+      <div class="ctag" data-k="bot">Бот-скрининг</div>
+    </div>
+    <div class="cc rv" style="transition-delay:.45s">
+      <div class="cnum">09</div><div class="cion">💆</div>
+      <div class="ctit" data-k="c9t">Эстетическая клиника</div>
+      <div class="cpain" data-k="c9p">Запись на недели вперёд — теряют новых клиентов</div>
+      <div class="ctag" data-k="bot">Бот-ассистент</div>
+    </div>
+    <div class="cc rv" style="transition-delay:.5s">
+      <div>
+        <div class="cnum" style="color:var(--bronze)">10 · VIP</div>
+        <div class="cion">🎙️</div>
+        <div class="ctit" data-k="c10t">Репродуктивная медицина (PMA)</div>
+        <div class="cpain" data-k="c10p">Пациенты в стрессе, сотни вопросов 24/7 — врачи перегружены</div>
+        <div class="ctag">Voice AI Agent</div>
+      </div>
+      <div>
+        <div class="vip-tech" data-k="c10h">Vapi.ai · ElevenLabs · Italiano</div>
+        <a href="#form" class="vip-cta" data-k="c10c">Хочу такого агента →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<div class="tools">
+  <div class="tools-lbl" data-k="tlbl">Работаю с</div>
+  <div class="tstrip">
+    <div class="tp">🔍 Google Business</div>
+    <div class="tp">🗺️ Google Maps</div>
+    <div class="tp">✉️ Telegram</div>
+    <div class="tp">💬 WhatsApp</div>
+    <div class="tp">🤖 ChatGPT / OpenAI</div>
+    <div class="tp">🧠 Claude / Anthropic</div>
+    <div class="tp">⚙️ Make (Integromat)</div>
+    <div class="tp">⚡ Zapier</div>
+    <div class="tp">🎙️ Vapi.ai</div>
+    <div class="tp">🔊 ElevenLabs</div>
+    <div class="tp">📸 Instagram</div>
+    <div class="tp">💼 LinkedIn</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="about-grid">
+    <div class="rv">
+      <div class="s-lbl" data-k="albl">Обо мне</div>
+      <h2 class="s-title" data-k="atit">Не агентство.<br><em>Специалист.</em></h2>
+      <blockquote class="a-quote" data-k="aq">«ИИ — инструмент. Ценность создаёт специалист, который умеет его применить.»</blockquote>
+      <p class="a-txt" data-k="ap1">Живу и работаю в Италии. Помогаю бизнесу автоматизировать продажи, клиентский сервис и найм — через чат-боты и голосовых ИИ-агентов. Говорю на трёх языках: RU · IT · EN.</p>
+      <p class="a-txt" data-k="ap2">Работала в трёх странах, знаю специфику итальянского рынка изнутри. Каждый кейс строю под конкретный бизнес — не шаблоны, а решения.</p>
+      <div class="a-stats">
+        <div><div class="sn">10+</div><div class="sl" data-k="s1">ниш автоматизировано</div></div>
+        <div><div class="sn">3</div><div class="sl" data-k="s2">языка</div></div>
+        <div><div class="sn">3</div><div class="sl" data-k="s3">страны</div></div>
+      </div>
+    </div>
+    <div class="rv" style="transition-delay:.18s">
+      <div class="s-lbl" data-k="wlbl">Почему я</div>
+      <ul class="why-list">
+        <li class="wi"><div class="wn">1</div><div class="wc"><strong data-k="w1t">Понимаю итальянский рынок</strong><p data-k="w1p">Живу в Ломбардии, работаю с местными клиентами. Знаю менталитет и специфику B2B здесь.</p></div></li>
+        <li class="wi"><div class="wn">2</div><div class="wc"><strong data-k="w2t">Три языка без переводчика</strong><p data-k="w2p">Бот говорит с вашими клиентами на их языке — RU, IT, EN. Я — с вами на вашем.</p></div></li>
+        <li class="wi"><div class="wn">3</div><div class="wc"><strong data-k="w3t">Результат, не презентация</strong><p data-k="w3p">Фокус на метриках: обращения, конверсия, экономия времени сотрудников.</p></div></li>
+        <li class="wi"><div class="wn">4</div><div class="wc"><strong data-k="w4t">VIP-опция — голосовой агент</strong><p data-k="w4p">Для бизнеса с высоким чеком — голосовой агент на итальянском. Работает 24/7.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="sec csec" id="contacts">
+  <div class="s-lbl" data-k="colbl">Связаться</div>
+  <h2 class="s-title" data-k="cotit">Напишите <em>прямо сейчас</em></h2>
+  <div class="cgr">
+    <a href="https://wa.me/393294142840" class="ci" target="_blank">
+      <div class="ci-ico">💬</div><div class="ci-pl">WhatsApp</div><div class="ci-val">+39 329 414 2840</div>
+    </a>
+    <a href="mailto:elenag142@gmail.com" class="ci">
+      <div class="ci-ico">✉️</div><div class="ci-pl">Email</div><div class="ci-val">elenag142@gmail.com</div>
+    </a>
+    <a href="https://t.me/HelenGurianova" class="ci" target="_blank">
+      <div class="ci-ico">✈️</div><div class="ci-pl">Telegram</div><div class="ci-val">@HelenGurianova</div>
+    </a>
+    <a href="https://www.facebook.com/share/1CNfVXBPzj/" class="ci" target="_blank">
+      <div class="ci-ico">📘</div><div class="ci-pl">Facebook</div><div class="ci-val">Elena Gurianova</div>
+    </a>
+    <a href="https://www.instagram.com/elena.automator" class="ci" target="_blank">
+      <div class="ci-ico">📸</div><div class="ci-pl">Instagram</div><div class="ci-val">@elena.automator</div>
+    </a>
+    <a href="https://www.linkedin.com/in/gurianova" class="ci" target="_blank">
+      <div class="ci-ico">💼</div><div class="ci-pl">LinkedIn</div><div class="ci-val">Elena Gurianova</div>
+    </a>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="sec fsec" id="form">
+  <div class="finner">
+    <div class="s-lbl rv" data-k="flbl">Получить кейс</div>
+    <h2 class="s-title rv" data-k="ftit">Хотите <em>такой же</em> результат?</h2>
+    <p class="fsub rv" data-k="fsub">Заполните форму — я пришлю полное описание нужного вам кейса и свяжусь в течение 24 часов.</p>
+    <form class="rv" onsubmit="FS(event)">
+      <div class="frow">
+        <div class="fg"><label data-k="fn">Ваше имя</label><input type="text" required placeholder="Elena"></div>
+        <div class="fg"><label data-k="fc">Компания / Ниша</label><input type="text" required placeholder="Стоматология Milano"></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label data-k="fw">WhatsApp / Telegram</label><input type="tel" required placeholder="+39 000 000 0000"></div>
+        <div class="fg">
+          <label data-k="fcase">Интересующий кейс</label>
+          <select required>
+            <option value="" data-k="fsel">Выберите...</option>
+            <option data-k="c1t">Медицинская конференция</option>
+            <option data-k="c2t">Ресторан</option>
+            <option data-k="c3t">Онлайн-школа</option>
+            <option data-k="c4t">Кондиционеры</option>
+            <option data-k="c5t">Автосалон</option>
+            <option data-k="c6t">Обучение детей</option>
+            <option data-k="c7t">Стоматология</option>
+            <option data-k="c8t">HR-агентство</option>
+            <option data-k="c9t">Эстетическая клиника</option>
+            <option data-k="c10t">PMA / Голосовой агент (VIP)</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg"><label data-k="fq">Коротко о задаче</label><textarea placeholder="Что хотите автоматизировать? Сколько входящих в день/неделю?"></textarea></div>
+      <button type="submit" class="fsub-btn"><span data-k="fbtn">Получить кейс</span> →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Elena Gurianova · Provodnik</span>
+  <span>Italia · AI Automation Specialist</span>
+</footer>
+
+<script>
+const T={
+ru:{ncta:'Написать',eye:'AI Automation · Chatbot Specialist',sub:'AI Automation Specialist · Italia · 3 языка · 3 страны',tag:'Я автоматизирую продажи и сервис — через чат-боты и ИИ-агентов. Без лишних слов.',cta1:'Хочу такой же кейс',cta2:'Смотреть кейсы',b1t:'AI Agent',b2t:'Lombardia',b2s:'B2B клиенты',mlbl:'ниш автоматизированы',msub:'3 языка · 3 страны',clbl:'Портфолио',ctit:'10 ниш. <em>Один специалист.</em>',c1t:'Медицинская конференция',c1p:'Ручная регистрация, хаос с расписанием',c2t:'Ресторан',c2p:'Бронь вручную — теряют гостей в пиковые часы',c3t:'Онлайн-школа',c3p:'Теряют заинтересованных без автонапоминаний',c4t:'Кондиционеры',c4p:'Сезонный пик — менеджер не успевает, заявки теряются',c5t:'Автосалон',c5p:'Менеджеры не успевают квалифицировать входящих',c6t:'Обучение детей',c6p:'Стандартный подход не учитывает уровень ребёнка',c7t:'Стоматология',c7p:'Регистратор 80% времени на телефоне',c8t:'HR-агентство',c8p:'200–500 анкет в неделю обрабатывают вручную',c9t:'Эстетическая клиника',c9p:'Запись на недели вперёд — теряют новых клиентов',c10t:'Репродуктивная медицина (PMA)',c10p:'Пациенты в стрессе, сотни вопросов 24/7 — врачи перегружены',c10h:'Vapi.ai · ElevenLabs · Italiano',c10c:'Хочу такого агента →',bot:'Бот-ассистент',real:'Реальный кейс',tlbl:'Работаю с',albl:'Обо мне',atit:'Не агентство.<br><em>Специалист.</em>',aq:'«ИИ — инструмент. Ценность создаёт специалист, который умеет его применить.»',ap1:'Живу и работаю в Италии. Помогаю бизнесу автоматизировать продажи, клиентский сервис и найм — через чат-боты и голосовых ИИ-агентов. Говорю на трёх языках: RU · IT · EN.',ap2:'Работала в трёх странах, знаю специфику итальянского рынка изнутри. Каждый кейс строю под конкретный бизнес — не шаблоны, а решения.',s1:'ниш автоматизировано',s2:'языка',s3:'страны',wlbl:'Почему я',w1t:'Понимаю итальянский рынок',w1p:'Живу в Ломбардии, работаю с местными клиентами. Знаю менталитет и специфику B2B здесь.',w2t:'Три языка без переводчика',w2p:'Бот говорит с вашими клиентами на их языке — RU, IT, EN. Я — с вами на вашем.',w3t:'Результат, не презентация',w3p:'Фокус на метриках: обращения, конверсия, экономия времени сотрудников.',w4t:'VIP-опция — голосовой агент',w4p:'Для бизнеса с высоким чеком — голосовой агент на итальянском. Работает 24/7.',colbl:'Связаться',cotit:'Напишите <em>прямо сейчас</em>',soon:'Скоро',flbl:'Получить кейс',ftit:'Хотите <em>такой же</em> результат?',fsub:'Заполните форму — я пришлю полное описание нужного вам кейса и свяжусь в течение 24 часов.',fn:'Ваше имя',fc:'Компания / Ниша',fw:'WhatsApp / Telegram',fcase:'Интересующий кейс',fsel:'Выберите...',fq:'Коротко о задаче',fbtn:'Получить кейс'},
+it:{ncta:'Scrivimi',eye:'AI Automation · Specialista Chatbot',sub:'AI Automation Specialist · Italia · 3 lingue · 3 paesi',tag:'Automatizzo vendite e customer service tramite chatbot e agenti AI. Senza parole inutili.',cta1:'Voglio lo stesso risultato',cta2:'Guarda i casi',b1t:'AI Agent',b2t:'Lombardia',b2s:'Clienti B2B',mlbl:'nicchie automatizzate',msub:'3 lingue · 3 paesi',clbl:'Portfolio',ctit:'10 nicchie. <em>Un\'unica specialista.</em>',c1t:'Conferenza medica',c1p:'Registrazione manuale, caos nelle agende',c2t:'Ristorante',c2p:'Prenotazioni manuali — perdono clienti nelle ore di punta',c3t:'Scuola online',c3p:'Perdono iscritti senza promemoria automatici',c4t:'Climatizzatori',c4p:'In stagione il manager non riesce a gestire tutte le richieste',c5t:'Concessionaria auto',c5p:'I venditori non qualificano tutti i contatti in tempo',c6t:'Formazione bambini',c6p:'L\'approccio standard non considera il livello del bambino',c7t:'Odontoiatria',c7p:'Il receptionist è al telefono l\'80% del tempo',c8t:'Agenzia HR',c8p:'200–500 candidature a settimana gestite manualmente',c9t:'Clinica estetica',c9p:'Liste d\'attesa di settimane — perdono nuovi clienti',c10t:'Medicina riproduttiva (PMA)',c10p:'Pazienti in stress, centinaia di domande 24/7 — medici sovraccarichi',c10h:'Vapi.ai · ElevenLabs · Italiano',c10c:'Voglio questo agente →',bot:'Bot assistente',real:'Caso reale',tlbl:'Lavoro con',albl:'Chi sono',atit:'Non un\'agenzia.<br><em>Una specialista.</em>',aq:'«L\'AI è uno strumento. Il valore lo crea lo specialista che sa usarlo.»',ap1:'Vivo e lavoro in Italia. Aiuto le aziende ad automatizzare vendite, customer service e recruiting tramite chatbot e agenti AI vocali. Parlo tre lingue: RU · IT · EN.',ap2:'Ho lavorato in tre paesi e conosco il mercato italiano dall\'interno. Ogni caso è costruito per un business specifico — non template, ma soluzioni.',s1:'nicchie automatizzate',s2:'lingue',s3:'paesi',wlbl:'Perché scegliermi',w1t:'Conosco il mercato italiano',w1p:'Vivo in Lombardia e lavoro con clienti locali. Conosco la mentalità e le specificità B2B qui.',w2t:'Tre lingue senza traduttore',w2p:'Il bot parla con i tuoi clienti nella loro lingua — RU, IT, EN. Io parlo con te nella tua.',w3t:'Risultati, non presentazioni',w3p:'Focus su metriche concrete: contatti, conversioni, ore risparmiate dal team.',w4t:'Opzione VIP — agente vocale',w4p:'Per business di fascia alta — agente vocale in italiano. Attivo 24/7.',colbl:'Contatti',cotit:'Scrivimi <em>adesso</em>',soon:'Presto',flbl:'Richiedi il caso',ftit:'Vuoi lo <em>stesso risultato?</em>',fsub:'Compila il modulo — ti mando la descrizione completa del caso e ti contatto entro 24 ore.',fn:'Il tuo nome',fc:'Azienda / Nicchia',fw:'WhatsApp / Telegram',fcase:'Caso di interesse',fsel:'Seleziona...',fq:'Descrivi brevemente la tua esigenza',fbtn:'Richiedi il caso'},
+en:{ncta:'Message me',eye:'AI Automation · Chatbot Specialist',sub:'AI Automation Specialist · Italy · 3 languages · 3 countries',tag:'I automate sales and customer service through chatbots and AI agents. No fluff.',cta1:'I want the same result',cta2:'See cases',b1t:'AI Agent',b2t:'Lombardia',b2s:'B2B clients',mlbl:'niches automated',msub:'3 languages · 3 countries',clbl:'Portfolio',ctit:'10 niches. <em>One specialist.</em>',c1t:'Medical Conference',c1p:'Manual registration, scheduling chaos',c2t:'Restaurant',c2p:'Manual booking calls — losing guests during peak hours',c3t:'Online School',c3p:'Losing prospects without automated follow-ups',c4t:'Air Conditioning',c4p:'Peak season — leads lost, manager overwhelmed',c5t:'Car Dealership',c5p:'Sales reps can\'t qualify all incoming leads fast enough',c6t:'Children\'s Education',c6p:'Standard approach ignores each child\'s level',c7t:'Dentistry',c7p:'Receptionist on the phone 80% of the time',c8t:'HR Agency',c8p:'200–500 applications per week processed manually',c9t:'Aesthetic Clinic',c9p:'Weeks-long waitlists — losing new patients',c10t:'Reproductive Medicine (PMA)',c10p:'Stressed patients, hundreds of questions 24/7 — doctors overwhelmed',c10h:'Vapi.ai · ElevenLabs · Italian voice',c10c:'I want this agent →',bot:'AI Assistant',real:'Real case',tlbl:'I work with',albl:'About me',atit:'Not an agency.<br><em>A specialist.</em>',aq:'"AI is a tool. Value is created by the specialist who knows how to use it."',ap1:'I live and work in Italy. I help businesses automate sales, customer service, and hiring through chatbots and voice AI agents. I speak three languages: RU · IT · EN.',ap2:'I\'ve worked in three countries and know the Italian market from the inside. Every case is built for a specific business — not templates, but real solutions.',s1:'niches automated',s2:'languages',s3:'countries',wlbl:'Why me',w1t:'I understand the Italian market',w1p:'I live in Lombardia and work with local clients. I know the B2B mindset and dynamics here.',w2t:'Three languages, no translator',w2p:'The bot speaks to your customers in their language — RU, IT, EN. I speak to you in yours.',w3t:'Results, not presentations',w3p:'Focus on concrete metrics: inquiries, conversion, team hours saved.',w4t:'VIP option — voice agent',w4p:'For premium businesses — Italian-language voice agent. Works 24/7.',colbl:'Contact',cotit:'Reach out <em>right now</em>',soon:'Coming soon',flbl:'Get the case',ftit:'Want <em>the same result?</em>',fsub:'Fill out the form — I\'ll send you the full case description and reach out within 24 hours.',fn:'Your name',fc:'Company / Niche',fw:'WhatsApp / Telegram',fcase:'Case of interest',fsel:'Select...',fq:'Brief description of your task',fbtn:'Get the case'}
+};
+
+let lang='ru';
+function L(l){
+  lang=l;
+  document.documentElement.lang=l;
+  document.querySelectorAll('.lb').forEach(b=>b.classList.toggle('on',b.textContent===l.toUpperCase()));
+  const t=T[l];
+  document.querySelectorAll('[data-k]').forEach(el=>{
+    const k=el.dataset.k;
+    if(!t[k])return;
+    if(el.tagName==='OPTION'||el.tagName==='INPUT'||el.tagName==='TEXTAREA'){el.textContent=t[k]}
+    else{el.innerHTML=t[k]}
+  });
+}
+
+// nav scroll
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>50));
+
+// reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')});
+},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+// form
+function FS(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.fsub-btn span');
+  const orig=btn.textContent;
+  btn.textContent=lang==='ru'?'✓ Отправлено!':lang==='it'?'✓ Inviato!':'✓ Sent!';
+  e.target.querySelector('.fsub-btn').style.background='var(--cypress)';
+  setTimeout(()=>{btn.textContent=orig;e.target.querySelector('.fsub-btn').style.background='';e.target.reset();},3000);
+}
+</script>
+</body>
+</html>
