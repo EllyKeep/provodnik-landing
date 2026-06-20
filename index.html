@@ -526,5 +526,47 @@ function FS(e){
   setTimeout(()=>{btn.textContent=orig;e.target.querySelector('.fsub-btn').style.background='';e.target.reset();},3000);
 }
 </script>
+
+<canvas id="comet-cursor" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999;"></canvas>
+<script>
+(function(){
+  const canvas = document.getElementById('comet-cursor');
+  const ctx = canvas.getContext('2d');
+  const COLOR = '196,67,26';
+  function resize(){ canvas.width=innerWidth; canvas.height=innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+  const trail = [];
+  const MAX = 28;
+  let mx = -200, my = -200;
+  window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  function frame(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    trail.push({x:mx, y:my});
+    if(trail.length > MAX) trail.shift();
+    for(let i=0; i<trail.length; i++){
+      const t = i/trail.length;
+      const r = t * 18;
+      const g = ctx.createRadialGradient(trail[i].x,trail[i].y,0,trail[i].x,trail[i].y,r);
+      g.addColorStop(0, `rgba(${COLOR},${t*0.6})`);
+      g.addColorStop(1, `rgba(${COLOR},0)`);
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(trail[i].x, trail[i].y, r, 0, Math.PI*2);
+      ctx.fill();
+    }
+    const gc = ctx.createRadialGradient(mx,my,0,mx,my,14);
+    gc.addColorStop(0,   'rgba(255,255,255,0.95)');
+    gc.addColorStop(0.35,`rgba(${COLOR},0.9)`);
+    gc.addColorStop(1,   `rgba(${COLOR},0)`);
+    ctx.fillStyle = gc;
+    ctx.beginPath();
+    ctx.arc(mx, my, 14, 0, Math.PI*2);
+    ctx.fill();
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+</script>
 </body>
 </html>
