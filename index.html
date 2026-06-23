@@ -546,7 +546,7 @@ function FS(e){
     if(trail.length > MAX) trail.shift();
     for(let i=0; i<trail.length; i++){
       const t = i/trail.length;
-      const r = t * 18;
+      const r = t * 9;
       const g = ctx.createRadialGradient(trail[i].x,trail[i].y,0,trail[i].x,trail[i].y,r);
       g.addColorStop(0, `rgba(${COLOR},${t*0.6})`);
       g.addColorStop(1, `rgba(${COLOR},0)`);
@@ -555,13 +555,13 @@ function FS(e){
       ctx.arc(trail[i].x, trail[i].y, r, 0, Math.PI*2);
       ctx.fill();
     }
-    const gc = ctx.createRadialGradient(mx,my,0,mx,my,14);
+    const gc = ctx.createRadialGradient(mx,my,0,mx,my,7);
     gc.addColorStop(0,   'rgba(255,255,255,0.95)');
     gc.addColorStop(0.35,`rgba(${COLOR},0.9)`);
     gc.addColorStop(1,   `rgba(${COLOR},0)`);
     ctx.fillStyle = gc;
     ctx.beginPath();
-    ctx.arc(mx, my, 14, 0, Math.PI*2);
+    ctx.arc(mx, my, 7, 0, Math.PI*2);
     ctx.fill();
     requestAnimationFrame(frame);
   }
