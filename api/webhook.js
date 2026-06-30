@@ -91,14 +91,19 @@ module.exports = async function handler(req, res) {
   }
 
   if (req.method === 'POST') {
+    console.log('POST received:', JSON.stringify(req.body).slice(0, 300));
     try {
       const msg = req.body?.entry?.[0]?.changes?.[0]?.value?.messages?.[0];
       if (msg && msg.type === 'text') {
+        console.log('Message from:', msg.from, 'text:', msg.text.body);
         const reply = getReply(msg.text.body);
-        await sendMessage(msg.from, reply);
+        const result = await sendMessage(msg.from, reply);
+        console.log('sendMessage result:', JSON.stringify(result));
+      } else {
+        console.log('No text message in payload, entry:', JSON.stringify(req.body?.entry?.[0]).slice(0, 200));
       }
     } catch (err) {
-      console.error('Webhook error:', err.message);
+      console.error('Webhook error:', err.message, err.stack);
     }
     res.status(200).end();
     return;
