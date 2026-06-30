@@ -43,11 +43,14 @@ function detectLang(text) {
 
 function getReply(text) {
   const clean = (text || '').trim();
+  // Извлекаем цифру из эмодзи-кейкапов (1️⃣ → '1') и обычных цифр
+  const digitMatch = clean.match(/^([1-5])[^\d]*/);
+  const digit = digitMatch ? digitMatch[1] : null;
   const lang = detectLang(clean);
   const faq = FAQ[lang];
 
   if (/^(hi|hello|ciao|привет|start|\/start|begin|inizio|hey|salve|buon)$/i.test(clean)) return faq.greeting;
-  if (/^[1-5]$/.test(clean)) return faq[clean];
+  if (digit) return faq[digit];
   if (/^(menu|меню|back|назад|indietro)$/i.test(clean)) return faq.menu;
 
   if (/цен|стоит|prezzo|costo|price|cost/i.test(clean)) return faq['1'];
