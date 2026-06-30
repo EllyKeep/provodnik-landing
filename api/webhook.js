@@ -91,17 +91,16 @@ module.exports = async function handler(req, res) {
   }
 
   if (req.method === 'POST') {
-    res.status(200).end();
-
     try {
       const msg = req.body?.entry?.[0]?.changes?.[0]?.value?.messages?.[0];
-      if (!msg || msg.type !== 'text') return;
-
-      const reply = getReply(msg.text.body);
-      await sendMessage(msg.from, reply);
+      if (msg && msg.type === 'text') {
+        const reply = getReply(msg.text.body);
+        await sendMessage(msg.from, reply);
+      }
     } catch (err) {
       console.error('Webhook error:', err.message);
     }
+    res.status(200).end();
     return;
   }
 
