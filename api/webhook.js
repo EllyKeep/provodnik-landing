@@ -1,7 +1,3 @@
-const TOKEN = process.env.WA_ACCESS_TOKEN;
-const PHONE_ID = process.env.WA_PHONE_NUMBER_ID;
-const VERIFY_TOKEN = process.env.WA_VERIFY_TOKEN || 'provodnik2026';
-
 const FAQ = {
   ru: {
     greeting: `Здравствуйте! Я помощник Елены Гурьяновой — AI Automation Specialist.\n\nВыберите тему:\n\n1️⃣ Услуги и цены\n2️⃣ Как это работает\n3️⃣ Примеры кейсов\n4️⃣ Связаться с Еленой\n5️⃣ О Provodnik`,
@@ -43,7 +39,6 @@ function detectLang(text) {
 
 function getReply(text) {
   const clean = (text || '').trim();
-  // Извлекаем цифру из эмодзи-кейкапов (1️⃣ → '1') и обычных цифр
   const digitMatch = clean.match(/^([1-5])[^\d]*/);
   const digit = digitMatch ? digitMatch[1] : null;
   const lang = detectLang(clean);
@@ -64,6 +59,8 @@ function getReply(text) {
 }
 
 async function sendMessage(to, text) {
+  const TOKEN = process.env.WA_ACCESS_TOKEN;
+  const PHONE_ID = process.env.WA_PHONE_NUMBER_ID;
   const res = await fetch(`https://graph.facebook.com/v19.0/${PHONE_ID}/messages`, {
     method: 'POST',
     headers: {
@@ -80,33 +77,51 @@ async function sendMessage(to, text) {
   return res.json();
 }
 
+const VERIFY_TOKEN = process.env.WA_VERIFY_TOKEN || 'provodnik2026';
+
 module.exports = async function handler(req, res) {
   if (req.method === 'GET') {
     const mode = req.query['hub.mode'];
     const token = req.query['hub.verify_token'];
     const challenge = req.query['hub.challenge'];
+    console.log('GET verify:', JSON.stringify({ mode, token, challenge, q: req.query }));
     if (mode === 'subscribe' && token === VERIFY_TOKEN) {
       res.status(200).send(challenge);
+    } else if (req.query['debug'] === 'check') {
+      res.status(200).json({
+        has_token: !!process.env.WA_ACCESS_TOKEN,
+        has_phone: !!process.env.WA_PHONE_NUMBER_ID,
+        phone_id: (process.env.WA_PHONE_NUMBER_ID || '').slice(-4),
+        verify_token: process.env.WA_VERIFY_TOKEN || '(fallback:provodnik2026)',
+        node: process.version,
+      });
     } else {
+      console.log('GET rejected - mode:', mode, 'token match:', token === VERIFY_TOKEN, 'VERIFY_TOKEN len:', VERIFY_TOKEN.length);
       res.status(403).end();
     }
     return;
   }
 
+  if (req.method === 'POST' && req.query['debug'] === 'sendtest') {
+    const to = req.query['to'];
+    if (to) {
+      const result = await sendMessage(to, 'Тест отправки ✅').catch(e => ({ error: e.message }));
+      res.status(200).json(result);
+    } else {
+      res.status(400).json({ error: 'missing to param' });
+    }
+    return;
+  }
+
   if (req.method === 'POST') {
-    console.log('POST received:', JSON.stringify(req.body).slice(0, 300));
     try {
       const msg = req.body?.entry?.[0]?.changes?.[0]?.value?.messages?.[0];
       if (msg && msg.type === 'text') {
-        console.log('Message from:', msg.from, 'text:', msg.text.body);
         const reply = getReply(msg.text.body);
-        const result = await sendMessage(msg.from, reply);
-        console.log('sendMessage result:', JSON.stringify(result));
-      } else {
-        console.log('No text message in payload, entry:', JSON.stringify(req.body?.entry?.[0]).slice(0, 200));
+        await sendMessage(msg.from, reply);
       }
     } catch (err) {
-      console.error('Webhook error:', err.message, err.stack);
+      console.error('Webhook error:', err.message);
     }
     res.status(200).end();
     return;
